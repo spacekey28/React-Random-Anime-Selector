@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
+import './scss/main.scss';
 
 const Index = () => {
-  return <div>Hello World</div>
+  return <App></App>;
 };
 
 ReactDOM.render(<Index />, document.getElementById('root'));
