@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import * as apiCall from './apiCall';
+
 class App extends Component {
   constructor(){
     super();
@@ -9,10 +10,12 @@ class App extends Component {
     this.loadAnime = this.loadAnime.bind(this);
   };
 
+  // Lifecycle method, calls before mounting
   componentWillMount() {
     this.loadAnime()
   }
   
+  // Call api to get a random anime and save it to the state
   async loadAnime(){
     let data = await apiCall.getRandAnime();
     let newAnime = {
@@ -28,7 +31,9 @@ class App extends Component {
   }  
 
   render() {
+    // Save last element of the animes array
     let newAnime = this.state.animes[this.state.animes.length-1];
+
     return (
       <Fragment>
         <h1 className="heading">Random Anime Selector</h1>
