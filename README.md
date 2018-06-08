@@ -27,9 +27,14 @@ build for production.
 * Getting a random anime with its title, thumbnail and synopsis by click a button.
 
 After fetching a get request Jikan server responses back JSON objects containing a specific anime with a corresponding ID. At the moment the app makes a request for one anime after one another.
+
 The state array saves each anime info - title, image_url and synopsis. But, some IDs for Jikan API apprently doesn't have JSON objects. Therefore I made it call another request when there was status responses between 400 and 500.
+
 If there would have been more time I could use more specific parameter in Jikan API to make a correct API request to get corresponding JSON objects except non-existent files.
-Also, I could have used Redux to manage states more efficiently.
+
+It would have been much better if there was spinner while waiting for API response.
+
+Also, I could have used Redux to manage states more efficiently and made a carousel to display saved animes in states.
 
 
 
