@@ -23,9 +23,11 @@ body {
     margin: 30px;
     padding: 20px;
     background-color: $secondary-color;
-    border: 1px solid $secondary-color;        
-    font-style: italic;
-    font-size: 18px;
+    border: 1px solid $secondary-color; 
+    font-size: 18px;       
+    p {
+      font-size: 13px;
+    }
   }
   .random-btn {
     display: block;

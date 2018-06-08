@@ -1,77 +1,46 @@
 import React, { Component, Fragment } from 'react';
-
+import * as apiCall from './apiCall';
 class App extends Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
     this.state = {
       animes: []
     }
+    this.loadAnime = this.loadAnime.bind(this);
   };
 
-  componentDidMount() {
-    try {
-      fetch('https://api.jikan.moe/anime/1')
-      .then(resp => {
-        if(!resp.ok) {
-          let err = {errorMessage: 'Please try again later, server is off'};
-          throw err;
-        }
-        return resp.json();
-      })
-      .then(data => {
-        let animes = {
-          title: data.title,
-          thumbnail: data.image_url
-        };
-        this.setState({animes});
-        console.log("state", this.state);
-      });
-    } catch(err) {
-      console.log(err);
-    }
+  componentWillMount() {
+    this.loadAnime()
   }
-
-  getRandNum(){
-    return Math.floor(Math.random()*100 + 1);
-  }
-
-  getRandom(){
-    try {
-      let rand = getRandNum();
-      fetch(`https://api.jikan.moe/anime/${rand}`)
-      .then(resp => {
-        if(!resp.ok) {
-          let err = {errorMessage: 'Please try again later, server is off'};
-          throw err;
-        }
-        return resp.json();
-      })
-      .then(data => {
-        let animes = {
-          title: data.title,
-          thumbnail: data.image_url
-        };
-        this.setState({animes});
-        console.log("state", this.state);
-      });
-    } catch(err) {
-      console.log(err);
-    }
-  }
+  
+  async loadAnime(){
+    let data = await apiCall.getRandAnime();
+    let newAnime = {
+      title: data.title,
+      thumbnail: data.image_url,
+      synopsis: data.synopsis
+    };
+    this.setState({
+      animes: [...this.state.animes, newAnime],
+    });
+    console.log("ID: ", data.mal_id);
+    console.log("state", this.state);
+  }  
 
   render() {
-    const selectedAnime = this.state.animes;
-    const lastIndex = selectedAnime.length-1;
+    let newAnime = this.state.animes[this.state.animes.length-1];
     return (
       <Fragment>
         <h1 className="heading">Random Anime Selector</h1>
         <div className="container">
-            <button className="random-btn" onClick={this.getRandom}>Get Random Anime</button>
+            <button className="random-btn" onClick={this.loadAnime}>Get Random Anime</button>
             <div className="anime-display">
-              <h3>{selectedAnime.title}</h3>
-              <img src={selectedAnime.thumbnail} />
+              <h3>{newAnime ? newAnime.title : ""}</h3>
+              <img src={newAnime ? newAnime.thumbnail : ""} />
+              <p>{newAnime ? newAnime.synopsis : ""}</p>
             </div>
         </div>
+        <p>Reference: <a href="https://jikan.moe/" target="_blank">Jikan API</a></p>
       </Fragment>
     )
   }
