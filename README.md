@@ -35,4 +35,4 @@ Also, I could have used Redux to manage states more efficiently.
 
 
 
-** This side project is to apply for the position at Allied Telesis Labs Ltd.
+* This side project is for a test with Allied Telesis Labs Ltd.
