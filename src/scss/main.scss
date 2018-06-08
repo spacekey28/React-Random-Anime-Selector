@@ -1,3 +1,46 @@
-h2 {
-  color: #eee;
+$primary-color: #333;
+$secondary-color: #BDBDBD;
+$main-font: 'Roboto', sans-serif;
+
+body {
+  font-family: $main-font;
+}
+.heading {
+  font-size: 28px;
+  text-align: center;
+}
+.container {
+  max-width: 700px;
+  min-width: 350px;
+  margin: 30px auto;
+  text-align: center;
+  border: 2px solid $primary-color;
+  border-radius: 10px;     
+  transition: all 0.5s ease-in;
+  color: $primary-color;
+  .anime-display {
+    line-height: 30px;
+    margin: 30px;
+    padding: 20px;
+    background-color: $secondary-color;
+    border: 1px solid $secondary-color;        
+    font-style: italic;
+    font-size: 18px;
+  }
+  .random-btn {
+    display: block;
+    border-radius: 30px;
+    text-align: center;
+    margin: 20px auto;  
+    text-transform: uppercase;
+    background-color: white;
+    border: 1px solid $secondary-color;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+  }  
 }
