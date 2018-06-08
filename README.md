@@ -18,8 +18,10 @@ npm run start
 ```
 
 index.html, css file and js file will be created in publid folder.
+start for development.
+build for production.
 
-## Key Features and 
+## Key Features and Issues
 
 * Getting a random anime with its title, thumbnail and synopsis by click a button.
 
@@ -33,5 +35,4 @@ Also, I could have used Redux to manage states more efficiently.
 
 
 
-
-* This side project is to apply for the position at Allied Telesis Labs Ltd.
+** This side project is to apply for the position at Allied Telesis Labs Ltd.
