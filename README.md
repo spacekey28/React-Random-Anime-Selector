@@ -36,4 +36,4 @@ Also, I could have used Redux to manage states more efficiently.
 
 
 
-* This side project is for a test with Allied Telesis Labs Ltd.
+* This side project is for the test with Allied Telesis Labs Ltd.
