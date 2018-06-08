@@ -2,7 +2,8 @@
 
 ## Introduction
 
-This SPA app has been deployed to Heroku(free tier) at <a target="_blank" href="https://random-anime.herokuapp.com/">https://random-anime.herokuapp.com/</a>
+This SPA app has been deployed to Heroku(free tier) at <a target="_blank" href="https://random-anime.herokuapp.com/">https://random-anime.herokuapp.com/</a>.
+
 The app was created using Webpack4, React16, Sass and Jikan API.
 
 Public API: <a target="_blank" href="https://jikan.moe/">Jikan API</a>.
