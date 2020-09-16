@@ -8,8 +8,8 @@ The app was created using Webpack4, React16, Sass and Jikan API.
 
 Public API: <a target="_blank" href="https://jikan.moe/">Jikan API</a>.
 
-* Node v8.11.1 used
-* NPM v6.1.0 used
+* Node v12.18.3 used
+* NPM v6.14.8 used
 
 ## Install
 
