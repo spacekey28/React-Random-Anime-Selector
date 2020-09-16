@@ -1,4 +1,4 @@
-const APIURL = "https://api.jikan.moe/anime/";
+const APIURL = "https://api.jikan.moe/v3/anime/";
 
 export async function getRandAnime() {
   // Get a random number betwee 1 and 1000
